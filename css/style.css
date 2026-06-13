@@ -93,6 +93,7 @@ h1, h2, h3, h4, .display {
   letter-spacing: -0.02em;
   line-height: 1.1;
   color: var(--text-primary);
+  overflow-wrap: break-word;
 }
 
 h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); }
@@ -100,6 +101,13 @@ h2 { font-size: clamp(2rem, 4.2vw, 3rem); }
 h3 { font-size: clamp(1.3rem, 2.4vw, 1.8rem); }
 
 p { color: var(--text-secondary); }
+
+p,
+li,
+a,
+button {
+  overflow-wrap: break-word;
+}
 
 .mono {
   font-family: var(--font-mono);
@@ -326,6 +334,7 @@ input,
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-family: var(--font-body);
   font-weight: 600;
@@ -336,6 +345,8 @@ input,
   cursor: pointer;
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s, border-color 0.3s;
   text-decoration: none;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .btn-primary {
@@ -375,6 +386,7 @@ input,
 /* ===================== Cards / Pills / Tags ===================== */
 .card {
   padding: 32px;
+  min-width: 0;
 }
 
 .tag {
@@ -494,6 +506,17 @@ input,
   }
 }
 
+@media (max-width: 560px) {
+  .card {
+    padding: 24px;
+  }
+
+  .tag,
+  .btn {
+    max-width: 100%;
+  }
+}
+
 /* ===================== Page header (sub-pages) ===================== */
 .page-header {
   padding: 160px 0 60px;
@@ -503,6 +526,12 @@ input,
 .page-header p {
   max-width: 640px;
   margin: 18px auto 0;
+}
+
+@media (max-width: 560px) {
+  .page-header {
+    padding: 132px 0 44px;
+  }
 }
 
 /* ===================== Scrollbar ===================== */
