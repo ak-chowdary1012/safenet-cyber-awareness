@@ -7,32 +7,66 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function closeNav() {
+    if (!toggle || !links) return;
+    links.classList.remove('open');
+    toggle.textContent = '☰';
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
   if (toggle && links) {
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', 'site-navigation');
+    links.id = 'site-navigation';
+
     toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
-      toggle.textContent = links.classList.contains('open') ? '✕' : '☰';
+      const isOpen = links.classList.toggle('open');
+      toggle.textContent = isOpen ? '✕' : '☰';
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!links.classList.contains('open')) return;
+      if (event.target.closest('.nav-inner')) return;
+      closeNav();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeNav();
     });
   }
 
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  }
 
   // Navbar background on scroll
   const navbar = document.querySelector('.navbar');
+  function syncNavbar() {
+    if (!navbar) return;
+    navbar.classList.toggle('scrolled', window.scrollY > 30);
+  }
   if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 30) navbar.classList.add('scrolled');
-      else navbar.classList.remove('scrolled');
-    });
+    syncNavbar();
+    window.addEventListener('scroll', syncNavbar, { passive: true });
   }
 
   // Set active nav link based on current page
@@ -41,20 +75,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const href = a.getAttribute('href');
     if (href === current || (current === '' && href === 'index.html')) {
       a.classList.add('active');
+      a.setAttribute('aria-current', 'page');
     }
   });
 
   // Stat counter animation
   const counters = document.querySelectorAll('[data-count]');
-  const counterIO = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCount(entry.target);
-        counterIO.unobserve(entry.target);
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    counters.forEach(el => {
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      el.textContent = `${target}${suffix}`;
+    });
+  } else {
+    const counterIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          counterIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(el => counterIO.observe(el));
+  }
+
+  // Offset in-page anchors for the fixed navbar
+  if (window.location.hash) {
+    requestAnimationFrame(() => {
+      const anchorTarget = document.querySelector(window.location.hash);
+      if (anchorTarget) {
+        anchorTarget.scrollIntoView({ block: 'start' });
       }
     });
-  }, { threshold: 0.4 });
-  counters.forEach(el => counterIO.observe(el));
+  }
 
   function animateCount(el) {
     const target = parseFloat(el.dataset.count);

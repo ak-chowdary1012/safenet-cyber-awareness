@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mini Games — SafeNet</title>
-<meta name="description" content="Play Spot the Phish, Password Strength Lab and Link Checker — interactive mini-games that build real cyber security instincts.">
+<title>Mini Games | SafeNet</title>
+<meta name="description" content="Play Spot the Phish, Password Strength Lab and Link Checker, interactive mini-games that build real cyber security instincts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -30,11 +30,12 @@
       <a href="learn.html">Threat Library</a>
       <a href="quiz.html">Quiz Zone</a>
       <a href="games.html" class="active">Mini Games</a>
+      <a href="password.html">Password Check</a>
       <a href="report.html">Report &amp; Helpline</a>
       <a href="about.html">About Us</a>
     </nav>
     <div class="nav-cta">
-      <a href="report.html" class="btn btn-danger" style="padding:10px 20px; font-size:0.85rem;">Report a Crime</a>
+      <a href="report.html" class="btn btn-danger nav-report-btn">Report a Crime</a>
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
     </div>
   </div>
@@ -44,7 +45,7 @@
   <div class="container">
     <span class="eyebrow">Mini Games</span>
     <h1>Practice makes <span class="gradient-text">paranoid (in a good way)</span></h1>
-    <p>Three short games that train the same instincts real scams try to bypass — spotting red flags, building strong passwords, and checking links before you click.</p>
+    <p>Three short games that train the same instincts real scams try to bypass by spotting red flags, building strong passwords, and checking links before you click.</p>
   </div>
 </section>
 
@@ -63,20 +64,20 @@
           <h3>Click every suspicious word or phrase</h3>
           <div class="tag tag-teal">Found: <span id="phishScore">0 / 7</span></div>
         </div>
-        <p style="margin-bottom:20px;">This message claims to be from a bank. Click on every word, phrase, or link that you think is a red flag. Some highlighted text is just normal — only click what feels suspicious.</p>
+        <p style="margin-bottom:20px;">This message claims to be from a bank. Click on every word, phrase, or link that you think is a red flag. Some highlighted text is just normal, so only click what feels suspicious.</p>
 
         <div class="phish-message glass" id="phishMessage">
           <span class="phish-word" data-flag="URGENT">URGENT</span>: Dear valued customer, this is to inform you that your account has been flagged for review and will be <span class="phish-word" data-flag="BLOCKED">BLOCKED</span> within <span class="phish-word" data-flag="24">24</span> hours unless you <span class="phish-word" data-flag="verify-now">verify-now</span> by visiting <span class="phish-word" data-flag="http://secure-update-bank.in">http://secure-update-bank.in</span>. You will be asked to confirm your <span class="phish-word" data-flag="OTP">OTP</span> and registered mobile number. Please act <span class="phish-word" data-flag="immediately">immediately</span> to avoid suspension of all banking services. Thank you for banking with us.
         </div>
 
         <div class="phish-found-list">
-          <div class="phish-found-item" data-flag="URGENT"><span class="icon">✓</span>"URGENT" in caps — designed to trigger panic and rushed decisions.</div>
-          <div class="phish-found-item" data-flag="BLOCKED"><span class="icon">✓</span>"BLOCKED" — fear-based language pressuring immediate action.</div>
-          <div class="phish-found-item" data-flag="24"><span class="icon">✓</span>"within 24 hours" — artificial deadline to prevent careful thinking.</div>
-          <div class="phish-found-item" data-flag="verify-now"><span class="icon">✓</span>"verify-now" — vague call to action pushing you toward a link.</div>
-          <div class="phish-found-item" data-flag="http://secure-update-bank.in"><span class="icon">✓</span>The link uses HTTP and a generic domain — not your real bank's official site.</div>
-          <div class="phish-found-item" data-flag="OTP"><span class="icon">✓</span>Asking to "confirm OTP" — no bank ever needs your OTP to "verify" anything.</div>
-          <div class="phish-found-item" data-flag="immediately"><span class="icon">✓</span>"act immediately" — another urgency trigger to bypass careful thinking.</div>
+          <div class="phish-found-item" data-flag="URGENT"><span class="icon">✓</span>"URGENT" in caps, designed to trigger panic and rushed decisions.</div>
+          <div class="phish-found-item" data-flag="BLOCKED"><span class="icon">✓</span>"BLOCKED" uses fear-based language to pressure immediate action.</div>
+          <div class="phish-found-item" data-flag="24"><span class="icon">✓</span>"within 24 hours" creates an artificial deadline to prevent careful thinking.</div>
+          <div class="phish-found-item" data-flag="verify-now"><span class="icon">✓</span>"verify-now" is a vague call to action pushing you toward a link.</div>
+          <div class="phish-found-item" data-flag="http://secure-update-bank.in"><span class="icon">✓</span>The link uses HTTP and a generic domain, not your real bank's official site.</div>
+          <div class="phish-found-item" data-flag="OTP"><span class="icon">✓</span>Asking to "confirm OTP" is suspicious because no bank ever needs your OTP to "verify" anything.</div>
+          <div class="phish-found-item" data-flag="immediately"><span class="icon">✓</span>"act immediately" is another urgency trigger meant to bypass careful thinking.</div>
         </div>
 
         <div style="margin-top:24px; display:flex; justify-content:flex-end;">
@@ -89,7 +90,7 @@
     <div class="game-panel" id="panelPassword">
       <div class="glass card reveal" style="max-width:640px; margin:0 auto;">
         <h3 style="margin-bottom:8px;">Test your password strength</h3>
-        <p style="margin-bottom:24px;">Type a password below (it's never sent anywhere — everything happens right here in your browser) and see how it holds up against common cracking checks.</p>
+        <p style="margin-bottom:24px;">Type a password below. It's never sent anywhere; everything happens right here in your browser. Then see how it holds up against common cracking checks.</p>
 
         <div class="pw-input-wrap">
           <input type="password" id="pwInput" placeholder="Type a password to test..." autocomplete="off">
@@ -111,6 +112,9 @@
         <div class="glass card" style="margin-top:24px; border-color:var(--teal-dim);">
           <h4 style="margin-bottom:8px; font-size:0.95rem;">💡 Pro tip: Use a passphrase</h4>
           <p style="font-size:0.88rem;">Four random words like <span class="mono" style="color:var(--teal);">tiger-cloud-amber-bench92</span> are easier to remember and harder to crack than a short complex password.</p>
+          <div style="margin-top:18px;">
+            <a href="password.html" class="btn btn-ghost">Open Full Password Checker</a>
+          </div>
         </div>
       </div>
     </div>
@@ -136,7 +140,7 @@
 
 <section class="section">
   <div class="container">
-    <div class="glass reveal" style="padding:50px; text-align:center; background:linear-gradient(135deg, rgba(0,245,212,0.06), rgba(123,97,255,0.06));">
+    <div class="glass page-cta reveal">
       <span class="eyebrow">Stay prepared</span>
       <h2 style="margin:14px 0;">Know what to do if something goes wrong</h2>
       <p style="max-width:520px; margin:0 auto 28px;">Even with the best instincts, mistakes happen. Know the exact steps and helpline to act fast.</p>
@@ -166,6 +170,7 @@
           <li><a href="learn.html">Threat Library</a></li>
           <li><a href="quiz.html">Quiz Zone</a></li>
           <li><a href="games.html">Mini Games</a></li>
+          <li><a href="password.html">Password Check</a></li>
           <li><a href="report.html">Report &amp; Helpline</a></li>
         </ul>
       </div>
@@ -187,7 +192,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 SafeNet — Team 36, Amrita Vishwa Vidyapeetham. Built for community awareness.</span>
+      <span>© 2026 SafeNet | Team 36, Amrita Vishwa Vidyapeetham. Built for community awareness.</span>
       <span class="mono">v1.0 · safenet-ssr-project</span>
     </div>
   </div>

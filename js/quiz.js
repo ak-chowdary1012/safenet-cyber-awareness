@@ -13,14 +13,14 @@ const QUIZ_DATA = [
       "The bank's name is mentioned"
     ],
     correct: 1,
-    explain: "Legitimate bank communications come from verified domains over HTTPS. 'sbi-kyc-update.in' is a lookalike domain designed to deceive — always check the URL carefully before clicking."
+    explain: "Legitimate bank communications come from verified domains over HTTPS. 'sbi-kyc-update.in' is a lookalike domain designed to deceive, so always check the URL carefully before clicking."
   },
   {
     category: "UPI Fraud",
     question: "Someone sends you ₹2,000 'by mistake' and then sends a QR code asking you to scan it to 'return' the money. What should you do?",
     options: [
       "Scan the QR and enter your UPI PIN to send it back",
-      "Don't scan it — to receive money you never need to scan a QR or enter a PIN",
+      "Don't scan it. To receive money, you never need to scan a QR or enter a PIN.",
       "Call them back immediately and apologise",
       "Forward the QR to a friend to verify"
     ],
@@ -31,20 +31,20 @@ const QUIZ_DATA = [
     category: "Identity Theft",
     question: "A 'lucky draw' WhatsApp form asks for your name, Aadhaar number, and a selfie to 'claim your prize'. What's the safest action?",
     options: [
-      "Fill it out — it's just for verification",
+      "Fill it out because it's just for verification",
       "Share only the Aadhaar number, skip the selfie",
-      "Don't share any of it — legitimate prizes don't require Aadhaar via WhatsApp forms",
+      "Don't share any of it. Legitimate prizes don't require Aadhaar via WhatsApp forms.",
       "Share a slightly modified Aadhaar number"
     ],
     correct: 2,
-    explain: "No legitimate contest or company collects Aadhaar numbers and selfies through a WhatsApp form. This is a classic identity-harvesting tactic — never share government ID documents this way."
+    explain: "No legitimate contest or company collects Aadhaar numbers and selfies through a WhatsApp form. This is a classic identity-harvesting tactic, so never share government ID documents this way."
   },
   {
     category: "Social Engineering",
     question: "You get a video call from someone in a police uniform saying you're under 'digital arrest' for a cybercrime case and must transfer money for 'verification'. What is this?",
     options: [
-      "A legitimate police procedure — comply immediately",
-      "A 'digital arrest' scam — no such legal process exists in India",
+      "A legitimate police procedure, so comply immediately",
+      "A 'digital arrest' scam. No such legal process exists in India.",
       "A test from your bank",
       "A normal KYC verification call"
     ],
@@ -56,12 +56,12 @@ const QUIZ_DATA = [
     question: "An HR message says you're 'selected' for a ₹35,000/month job but must pay a ₹999 'registration fee' first. This is most likely:",
     options: [
       "A standard hiring practice for good companies",
-      "A scam — legitimate employers never charge candidates any fee",
+      "A scam. Legitimate employers never charge candidates any fee.",
       "Acceptable only if the company is well-known",
       "Normal if the fee is 'refundable'"
     ],
     correct: 1,
-    explain: "Real employers never ask candidates to pay money at any stage — for registration, training, equipment, or 'processing'. Any such request is a scam, regardless of how official it sounds."
+    explain: "Real employers never ask candidates to pay money at any stage, whether for registration, training, equipment, or 'processing'. Any such request is a scam, regardless of how official it sounds."
   },
   {
     category: "Cyberbullying",
@@ -80,7 +80,7 @@ const QUIZ_DATA = [
     question: "A pop-up says 'Your phone has 3 viruses! Tap here to clean now.' What's the best response?",
     options: [
       "Tap it immediately to remove the viruses",
-      "Close the browser/app without tapping anything — this is a fake scareware ad",
+      "Close the browser/app without tapping anything. This is a fake scareware ad.",
       "Share the pop-up with friends to warn them",
       "Restart the phone and then tap it"
     ],
@@ -97,13 +97,13 @@ const QUIZ_DATA = [
       "Forward it to a friend to click first"
     ],
     correct: 2,
-    explain: "Always navigate to official channels independently — your bank's app or a manually-typed URL — rather than trusting links or replies, which could be controlled by the attacker."
+    explain: "Always navigate to official channels independently using your bank's app or a manually typed URL, rather than trusting links or replies that could be controlled by the attacker."
   },
   {
     category: "UPI Fraud",
     question: "You search online for 'XYZ Bank customer care number' and call the first result. The person asks you to install AnyDesk to 'fix' your account issue. You should:",
     options: [
-      "Install it — they're from customer care",
+      "Install it because they're from customer care",
       "Refuse, hang up, and call the number on your bank card/passbook instead",
       "Install it but don't share your screen",
       "Ask them to call you back later"
@@ -121,14 +121,14 @@ const QUIZ_DATA = [
       "Post it on social media for proof of identity"
     ],
     correct: 1,
-    explain: "Masked Aadhaar, available through the UIDAI website or mAadhaar app, shows only the last 4 digits — reducing the risk if the document is misused or leaked."
+    explain: "Masked Aadhaar, available through the UIDAI website or mAadhaar app, shows only the last 4 digits, reducing the risk if the document is misused or leaked."
   },
   {
     category: "Malware",
     question: "Your friend sends you an APK file on WhatsApp saying 'install this app, it's amazing'. The safest action is:",
     options: [
       "Install it immediately since it's from a friend",
-      "Don't install APKs from chat apps — only install from official app stores",
+      "Don't install APKs from chat apps. Only install from official app stores.",
       "Install it but turn off Wi-Fi first",
       "Forward it to other friends to test first"
     ],
@@ -145,7 +145,7 @@ const QUIZ_DATA = [
       "The caller asks you to call back on the official helpline"
     ],
     correct: 0,
-    explain: "Isolating the victim — keeping them on a continuous call so they can't verify with family, banks, or real authorities — is a hallmark of these scams. Real procedures never require this."
+    explain: "Isolating the victim by keeping them on a continuous call so they can't verify with family, banks, or real authorities is a common sign of these scams. Real procedures never require this."
   }
 ];
 
@@ -252,13 +252,13 @@ function showResults() {
   let tag, message;
   if (percent >= 80) {
     tag = '<span class="tag tag-teal">Cyber Sentinel</span>';
-    message = "Excellent! You've internalised the core red flags — you're well-equipped to spot and stop most common scams.";
+    message = "Excellent! You've internalised the core red flags, and you're well-equipped to spot and stop most common scams.";
   } else if (percent >= 50) {
     tag = '<span class="tag tag-amber">Getting There</span>';
-    message = "Good start — review the Threat Library sections you missed to sharpen your instincts further.";
+    message = "Good start. Review the Threat Library sections you missed to sharpen your instincts further.";
   } else {
     tag = '<span class="tag tag-danger">Stay Alert</span>';
-    message = "These scams are designed to be convincing. Spend some time in the Threat Library — a little awareness goes a long way.";
+    message = "These scams are designed to be convincing. Spend some time in the Threat Library. A little awareness goes a long way.";
   }
 
   let reviewHTML = '';

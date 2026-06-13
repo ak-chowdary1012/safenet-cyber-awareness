@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Threat Library — SafeNet</title>
-<meta name="description" content="Detailed, plain-language guides on phishing, UPI fraud, identity theft, social engineering, job scams, cyberbullying and malware — with real examples and how to identify them.">
+<title>Threat Library | SafeNet</title>
+<meta name="description" content="Detailed, plain-language guides on phishing, UPI fraud, identity theft, social engineering, job scams, cyberbullying and malware, with real examples and practical ways to identify them.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -30,11 +30,12 @@
       <a href="learn.html" class="active">Threat Library</a>
       <a href="quiz.html">Quiz Zone</a>
       <a href="games.html">Mini Games</a>
+      <a href="password.html">Password Check</a>
       <a href="report.html">Report &amp; Helpline</a>
       <a href="about.html">About Us</a>
     </nav>
     <div class="nav-cta">
-      <a href="report.html" class="btn btn-danger" style="padding:10px 20px; font-size:0.85rem;">Report a Crime</a>
+      <a href="report.html" class="btn btn-danger nav-report-btn">Report a Crime</a>
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
     </div>
   </div>
@@ -68,15 +69,15 @@
       <div class="topic-intro reveal">
         <div class="tag tag-danger">01 · Most common</div>
         <h2 style="margin:16px 0 14px;">Phishing Attacks</h2>
-        <p>Phishing is when an attacker pretends to be a trusted organisation — a bank, delivery company, government body or even a friend — to trick you into clicking a link, downloading a file, or handing over login details, OTPs or card numbers.</p>
+        <p>Phishing is when an attacker pretends to be a trusted organisation, such as a bank, delivery company, government body or even a friend, to trick you into clicking a link, downloading a file, or handing over login details, OTPs or card numbers.</p>
         <p style="margin-top:14px;">It arrives as email, SMS ("smishing"), WhatsApp messages, voice calls ("vishing") or fake websites that look almost identical to the real thing.</p>
 
         <h3 style="margin:28px 0 14px; font-size:1.1rem;">Red flags to spot instantly</h3>
         <ul class="checklist">
-          <li>Urgency or threats — "act within 24 hours or your account will be blocked"</li>
-          <li>Mismatched or misspelled domains — <span class="mono">arnaz0n-support.com</span> instead of amazon.in</li>
-          <li>Generic greetings — "Dear Customer" instead of your real name</li>
-          <li>Requests for OTP, PIN, CVV or passwords — no legitimate bank ever asks for these</li>
+          <li>Urgency or threats, such as "act within 24 hours or your account will be blocked"</li>
+          <li>Mismatched or misspelled domains, like <span class="mono">arnaz0n-support.com</span> instead of amazon.in</li>
+          <li>Generic greetings, such as "Dear Customer" instead of your real name</li>
+          <li>Requests for OTP, PIN, CVV or passwords. No legitimate bank ever asks for these.</li>
           <li>Links that don't match the text shown (hover before clicking)</li>
           <li>Unexpected attachments, especially .exe, .zip or .apk files</li>
         </ul>
@@ -102,9 +103,9 @@
             </div>
           </div>
           <div class="annotation-list">
-            <div class="annotation"><span class="num">1</span>Creates panic with "BLOCKED today" — real banks give weeks of notice.</div>
-            <div class="annotation"><span class="num">2</span>The link domain is <span class="mono">sbi-kyc-update.in</span> — not <span class="mono">onlinesbi.sbi</span>.</div>
-            <div class="annotation"><span class="num">3</span>Uses HTTP, not HTTPS — official banking sites are always secured.</div>
+            <div class="annotation"><span class="num">1</span>Creates panic with "BLOCKED today." Real banks give weeks of notice.</div>
+            <div class="annotation"><span class="num">2</span>The link domain is <span class="mono">sbi-kyc-update.in</span>, not <span class="mono">onlinesbi.sbi</span>.</div>
+            <div class="annotation"><span class="num">3</span>Uses HTTP instead of HTTPS. Official banking sites are always secured.</div>
           </div>
         </div>
       </div>
@@ -113,9 +114,9 @@
     <div class="glass card reveal" style="margin-top:36px;">
       <h3 style="margin-bottom:14px;">How to protect yourself</h3>
       <div class="grid grid-3">
-        <div class="protect-item"><span class="protect-num">→</span>Never click links in unexpected messages — go to the official app or type the website URL yourself.</div>
+        <div class="protect-item"><span class="protect-num">→</span>Never click links in unexpected messages. Go to the official app or type the website URL yourself.</div>
         <div class="protect-item"><span class="protect-num">→</span>Enable 2-factor authentication on email, banking and social media accounts.</div>
-        <div class="protect-item"><span class="protect-num">→</span>Verify by calling the organisation's official number — found on their real website or your bank card, not the message.</div>
+        <div class="protect-item"><span class="protect-num">→</span>Verify by calling the organisation's official number listed on their real website or your bank card, not in the message.</div>
       </div>
     </div>
   </div>
@@ -142,14 +143,14 @@
               <div class="scenario-icon">🔲</div>
               <div>
                 <div class="scenario-title">The QR code is a trap</div>
-                <div class="scenario-text">Scanning a QR code and entering your UPI PIN to "receive" money actually <strong>authorises an outgoing payment</strong> — UPI PINs are only ever needed to send money, never to receive it.</div>
+                <div class="scenario-text">Scanning a QR code and entering your UPI PIN to "receive" money actually <strong>authorises an outgoing payment</strong>. UPI PINs are only needed to send money, never to receive it.</div>
               </div>
             </div>
             <div class="scenario-step">
               <div class="scenario-icon">💸</div>
               <div>
                 <div class="scenario-title">Money leaves your account</div>
-                <div class="scenario-text">The "refund" QR actually debits your account for whatever amount the scammer set — often far more than ₹5,000.</div>
+                <div class="scenario-text">The "refund" QR actually debits your account for whatever amount the scammer set, often far more than ₹5,000.</div>
               </div>
             </div>
           </div>
@@ -197,7 +198,7 @@
       <div class="topic-intro reveal">
         <div class="tag tag-violet">03 · Long-term risk</div>
         <h2 style="margin:16px 0 14px;">Identity Theft</h2>
-        <p>Identity theft happens when someone collects enough of your personal information — Aadhaar number, PAN, date of birth, address, photos — to impersonate you for loans, SIM cards, or fraudulent accounts.</p>
+        <p>Identity theft happens when someone collects enough of your personal information, such as your Aadhaar number, PAN, date of birth, address, and photos, to impersonate you for loans, SIM cards, or fraudulent accounts.</p>
         <p style="margin-top:14px;">It often starts small: a "lucky draw" form asking for Aadhaar details, a fake KYC update call, or photos of documents shared casually on WhatsApp groups.</p>
 
         <h3 style="margin:28px 0 14px; font-size:1.1rem;">How attackers collect your data</h3>
@@ -206,7 +207,7 @@
           <li>Public Wi-Fi networks that intercept unencrypted traffic</li>
           <li>Data breaches at companies that store your details</li>
           <li>Oversharing documents (Aadhaar, PAN photos) over chat</li>
-          <li>Social media posts revealing date of birth, mother's name, pet names — common security answers</li>
+          <li>Social media posts revealing date of birth, mother's name, or pet names, which are common security answers</li>
         </ul>
       </div>
 
@@ -227,7 +228,7 @@
     <div class="glass card reveal" style="margin-top:36px;">
       <h3 style="margin-bottom:14px;">How to protect yourself</h3>
       <div class="grid grid-3">
-        <div class="protect-item"><span class="protect-num">→</span>Use Aadhaar masking (mAadhaar app) when sharing copies — it hides all but the last 4 digits.</div>
+        <div class="protect-item"><span class="protect-num">→</span>Use Aadhaar masking (mAadhaar app) when sharing copies. It hides all but the last 4 digits.</div>
         <div class="protect-item"><span class="protect-num">→</span>Check your credit report (CIBIL/Experian) every few months for unfamiliar accounts.</div>
         <div class="protect-item"><span class="protect-num">→</span>Lock your Aadhaar biometrics via UIDAI when not actively needed.</div>
       </div>
@@ -247,8 +248,8 @@
           <div class="annotation-list" style="margin-top:0;">
             <div class="annotation"><span class="num">A</span><strong>Authority:</strong> "This is Inspector Sharma from Cyber Cell, your Aadhaar is linked to a money laundering case."</div>
             <div class="annotation"><span class="num">U</span><strong>Urgency:</strong> "Your account will be permanently closed in 30 minutes unless you act now."</div>
-            <div class="annotation"><span class="num">F</span><strong>Fear:</strong> "A digital arrest warrant has been issued — stay on this video call or face arrest."</div>
-            <div class="annotation"><span class="num">G</span><strong>Greed:</strong> "You've won a lottery — pay a small processing fee to claim ₹25,00,000."</div>
+            <div class="annotation"><span class="num">F</span><strong>Fear:</strong> "A digital arrest warrant has been issued. Stay on this video call or face arrest."</div>
+            <div class="annotation"><span class="num">G</span><strong>Greed:</strong> "You've won a lottery. Pay a small processing fee to claim ₹25,00,000."</div>
             <div class="annotation"><span class="num">T</span><strong>Trust:</strong> A cloned voice or hacked account of a friend asking to "urgently transfer money."</div>
           </div>
         </div>
@@ -257,12 +258,12 @@
       <div class="topic-intro reveal">
         <div class="tag tag-amber">04 · Psychological</div>
         <h2 style="margin:16px 0 14px;">Social Engineering</h2>
-        <p>Social engineering is the human side of hacking — instead of breaking software, attackers manipulate <em>people</em> using urgency, authority, fear, and trust to bypass logic.</p>
-        <p style="margin-top:14px;">The newest and most dangerous variant in India is the <strong>"digital arrest" scam</strong>, where fraudsters impersonate police or CBI officers on video calls, claiming the victim is under investigation and must transfer funds for "verification" — a real-time, high-pressure con designed to prevent victims from thinking clearly or consulting anyone.</p>
+        <p>Social engineering is the human side of hacking. Instead of breaking software, attackers manipulate <em>people</em> using urgency, authority, fear, and trust to bypass logic.</p>
+        <p style="margin-top:14px;">The newest and most dangerous variant in India is the <strong>"digital arrest" scam</strong>, where fraudsters impersonate police or CBI officers on video calls, claiming the victim is under investigation and must transfer funds for "verification." It is a real-time, high-pressure con designed to prevent victims from thinking clearly or consulting anyone.</p>
 
         <h3 style="margin:28px 0 14px; font-size:1.1rem;">The one rule that defeats all of these</h3>
         <div class="glass card" style="border-color:var(--teal-dim);">
-          <p style="color:var(--text-primary); font-weight:600;">Pause. No genuine authority — police, bank, or government — will ever ask for money, OTPs, or "verification transfers" over a call or video call. Hang up, and verify independently using official numbers.</p>
+          <p style="color:var(--text-primary); font-weight:600;">Pause. No genuine authority, whether police, bank, or government, will ever ask for money, OTPs, or "verification transfers" over a call or video call. Hang up and verify independently using official numbers.</p>
         </div>
       </div>
     </div>
@@ -282,7 +283,7 @@
 
         <h3 style="margin:28px 0 14px; font-size:1.1rem;">Common formats</h3>
         <ul class="checklist">
-          <li><strong>Task-based scams:</strong> "Like 5 videos, earn ₹500" — early small payouts build trust, then larger "investments" are demanded before withdrawal</li>
+          <li><strong>Task-based scams:</strong> "Like 5 videos, earn ₹500." Early small payouts build trust, then larger "investments" are demanded before withdrawal.</li>
           <li><strong>Pay-to-get-hired:</strong> Offer letters that require a "security deposit," "training fee," or "laptop charge" before joining</li>
           <li><strong>Data harvesting forms:</strong> "Apply now" forms asking for bank details, Aadhaar, and PAN for a job that doesn't exist</li>
           <li><strong>Work-from-home data entry:</strong> Requires purchasing a "starter kit" or software license</li>
@@ -306,7 +307,7 @@
             </div>
           </div>
           <div class="annotation-list">
-            <div class="annotation"><span class="num">1</span>Real recruiters never ask candidates to pay anything — ever.</div>
+            <div class="annotation"><span class="num">1</span>Real recruiters never ask candidates to pay anything, ever.</div>
             <div class="annotation"><span class="num">2</span>Shortened links (bit.ly) hide the real destination.</div>
             <div class="annotation"><span class="num">3</span>"Refundable" fees are almost never refunded.</div>
           </div>
@@ -317,7 +318,7 @@
     <div class="glass card reveal" style="margin-top:36px;">
       <h3 style="margin-bottom:14px;">How to protect yourself</h3>
       <div class="grid grid-3">
-        <div class="protect-item"><span class="protect-num">→</span>Verify the company's official careers page and email domain directly — not links sent to you.</div>
+        <div class="protect-item"><span class="protect-num">→</span>Verify the company's official careers page and email domain directly, not through links sent to you.</div>
         <div class="protect-item"><span class="protect-num">→</span>Legitimate employers never ask for payment, deposits, or your bank PIN/OTP at any hiring stage.</div>
         <div class="protect-item"><span class="protect-num">→</span>Search the company name + "scam" before engaging further.</div>
       </div>
@@ -347,16 +348,16 @@
       <div class="topic-intro reveal">
         <div class="tag tag-violet">06 · Online safety</div>
         <h2 style="margin:16px 0 14px;">Cyberbullying &amp; Online Harassment</h2>
-        <p>Online harassment can affect anyone, but students and young people are especially vulnerable. It's never something to "just ignore" — Indian law treats many of these acts as criminal offences under the IT Act and IPC/BNS provisions.</p>
+        <p>Online harassment can affect anyone, but students and young people are especially vulnerable. It's never something to "just ignore" because Indian law treats many of these acts as criminal offences under the IT Act and IPC/BNS provisions.</p>
 
         <h3 style="margin:28px 0 14px; font-size:1.1rem;">What to do if it happens to you or someone you know</h3>
         <ul class="checklist">
-          <li><strong>Don't respond or retaliate</strong> — this often escalates the situation</li>
+          <li><strong>Don't respond or retaliate</strong>; this often escalates the situation</li>
           <li><strong>Document everything:</strong> screenshots with timestamps, usernames, and URLs</li>
-          <li><strong>Use platform reporting tools</strong> — Instagram, WhatsApp and Facebook all have dedicated harassment reporting flows</li>
+          <li><strong>Use platform reporting tools</strong>. Instagram, WhatsApp and Facebook all have dedicated harassment reporting flows.</li>
           <li><strong>Block the account</strong> across all platforms</li>
-          <li><strong>Report to the National Cyber Crime Portal</strong> (cybercrime.gov.in) — has a dedicated section for women/child safety</li>
-          <li><strong>Talk to a trusted adult, teacher, or counsellor</strong> — you are not alone in this</li>
+          <li><strong>Report to the National Cyber Crime Portal</strong> (cybercrime.gov.in). It has a dedicated section for women and child safety.</li>
+          <li><strong>Talk to a trusted adult, teacher, or counsellor</strong>. You are not alone in this.</li>
         </ul>
       </div>
     </div>
@@ -377,7 +378,7 @@
         <h3 style="margin:28px 0 14px; font-size:1.1rem;">How infections typically start</h3>
         <ul class="checklist">
           <li>Downloading apps from outside the Play Store / App Store (APK files via WhatsApp)</li>
-          <li>Clicking pop-up ads claiming "Your device is infected — click to clean"</li>
+          <li>Clicking pop-up ads claiming "Your device is infected, click to clean"</li>
           <li>Plugging in unknown USB drives</li>
           <li>Opening email attachments from unknown senders (especially .exe, .scr, .js)</li>
           <li>Pirated software or "cracked" app downloads</li>
@@ -403,7 +404,7 @@
       <h3 style="margin-bottom:14px;">How to protect yourself</h3>
       <div class="grid grid-3">
         <div class="protect-item"><span class="protect-num">→</span>Only install apps from official stores, and check permissions requested at install time.</div>
-        <div class="protect-item"><span class="protect-num">→</span>Keep your OS and apps updated — updates patch security holes attackers exploit.</div>
+        <div class="protect-item"><span class="protect-num">→</span>Keep your OS and apps updated. Updates patch security holes that attackers exploit.</div>
         <div class="protect-item"><span class="protect-num">→</span>Back up important files regularly to cloud storage or an external drive disconnected from your device.</div>
       </div>
     </div>
@@ -413,10 +414,10 @@
 <!-- ===================== NEXT STEP CTA ===================== -->
 <section class="section">
   <div class="container">
-    <div class="glass reveal" style="padding:50px; text-align:center; background:linear-gradient(135deg, rgba(0,245,212,0.06), rgba(123,97,255,0.06));">
+    <div class="glass page-cta reveal">
       <span class="eyebrow">Next step</span>
       <h2 style="margin:14px 0;">Think you can spot a scam now?</h2>
-      <p style="max-width:520px; margin:0 auto 28px;">Put everything you've just learned to the test — the Quiz Zone and Mini-Games turn these red flags into instinct.</p>
+      <p style="max-width:520px; margin:0 auto 28px;">Put everything you've just learned to the test. The Quiz Zone and Mini-Games turn these red flags into instinct.</p>
       <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
         <a href="quiz.html" class="btn btn-primary">Take the Quiz</a>
         <a href="games.html" class="btn btn-ghost">Play Mini-Games</a>
@@ -446,6 +447,7 @@
           <li><a href="learn.html">Threat Library</a></li>
           <li><a href="quiz.html">Quiz Zone</a></li>
           <li><a href="games.html">Mini Games</a></li>
+          <li><a href="password.html">Password Check</a></li>
           <li><a href="report.html">Report &amp; Helpline</a></li>
         </ul>
       </div>
@@ -467,7 +469,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 SafeNet — Team 36, Amrita Vishwa Vidyapeetham. Built for community awareness.</span>
+      <span>© 2026 SafeNet | Team 36, Amrita Vishwa Vidyapeetham. Built for community awareness.</span>
       <span class="mono">v1.0 · safenet-ssr-project</span>
     </div>
   </div>

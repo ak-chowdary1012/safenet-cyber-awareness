@@ -5,6 +5,10 @@
 .team-card {
   text-align: center;
   padding: 36px 24px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .team-avatar {
@@ -30,4 +34,21 @@
   font-size: 0.8rem;
   color: var(--text-muted);
   letter-spacing: 0.05em;
+}
+
+.team-role {
+  margin-top: 14px;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.45;
+  max-width: 100%;
+  white-space: normal;
+  min-height: 56px;
+  padding: 8px 14px;
+}
+
+@media (max-width: 640px) {
+  .team-role {
+    min-height: auto;
+  }
 }

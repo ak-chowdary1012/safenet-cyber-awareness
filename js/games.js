@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
       pwFill.style.width = percent + '%';
       let color, label;
       if (pw.length === 0) { color = 'var(--danger)'; label = 'Enter a password to test'; }
-      else if (percent <= 33) { color = 'var(--danger)'; label = 'Weak — easily cracked in seconds'; }
-      else if (percent <= 66) { color = 'var(--amber)'; label = 'Moderate — could be stronger'; }
-      else if (percent < 100) { color = '#5ce0c7'; label = 'Strong — good password'; }
-      else { color = 'var(--teal)'; label = 'Excellent — very strong password'; }
+      else if (percent <= 33) { color = 'var(--danger)'; label = 'Weak: easily cracked in seconds'; }
+      else if (percent <= 66) { color = 'var(--amber)'; label = 'Moderate: could be stronger'; }
+      else if (percent < 100) { color = '#5ce0c7'; label = 'Strong: good password'; }
+      else { color = 'var(--teal)'; label = 'Excellent: very strong password'; }
 
       pwFill.style.background = color;
       if (pwLabel) {
@@ -123,11 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --------------------- Game 3: Link Checker ---------------------
   const LINK_ITEMS = [
-    { url: 'https://www.onlinesbi.sbi/login', safe: true, explain: "Correct — 'onlinesbi.sbi' is SBI's genuine domain with HTTPS encryption." },
+    { url: 'https://www.onlinesbi.sbi/login', safe: true, explain: "Correct. 'onlinesbi.sbi' is SBI's genuine domain with HTTPS encryption." },
     { url: 'http://onlinesbi-secure-login.com/verify', safe: false, explain: "This is a fake lookalike domain. The real SBI site doesn't use '-secure-login' or a .com TLD for net banking, and it's not HTTPS." },
-    { url: 'https://www.amazon.in/orders', safe: true, explain: "Correct — this is Amazon's genuine domain and order page." },
-    { url: 'https://amaz0n-rewards.in/claim-prize', safe: false, explain: "Notice the zero in 'amaz0n' replacing the letter 'o' — a classic typosquatting trick to fool quick readers." },
-    { url: 'https://accounts.google.com/signin', safe: true, explain: "Correct — this is Google's genuine sign-in subdomain." },
+    { url: 'https://www.amazon.in/orders', safe: true, explain: "Correct. This is Amazon's genuine domain and order page." },
+    { url: 'https://amaz0n-rewards.in/claim-prize', safe: false, explain: "Notice the zero in 'amaz0n' replacing the letter 'o'. That's a classic typosquatting trick to fool quick readers." },
+    { url: 'https://accounts.google.com/signin', safe: true, explain: "Correct. This is Google's genuine sign-in subdomain." },
     { url: 'https://bit.ly/claim-kbc-lottery-2026', safe: false, explain: "Shortened links hide their real destination, and 'KBC lottery' messages are a well-known long-running scam in India." }
   ];
 
