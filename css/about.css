@@ -1,0 +1,33 @@
+/* ===================================================================
+   SafeNet — About / Team page styles
+   =================================================================== */
+
+.team-card {
+  text-align: center;
+  padding: 36px 24px;
+}
+
+.team-avatar {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--violet));
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bg-base);
+}
+
+.team-card h3 {
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+}
+
+.team-id {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}

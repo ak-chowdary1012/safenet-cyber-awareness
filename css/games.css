@@ -1,0 +1,288 @@
+/* ===================================================================
+   SafeNet — Mini Games styles
+   =================================================================== */
+
+.game-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.game-tab {
+  padding: 12px 24px;
+  border-radius: 100px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.game-tab.active {
+  background: var(--teal);
+  color: var(--bg-base);
+  border-color: var(--teal);
+}
+
+.game-tab:hover:not(.active) {
+  border-color: var(--glass-border-bright);
+  color: var(--text-primary);
+}
+
+.game-panel { display: none; }
+.game-panel.active { display: block; }
+
+/* ===== Spot the Phish ===== */
+.phish-message {
+  background: var(--bg-base);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.phish-word {
+  cursor: pointer;
+  padding: 1px 3px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.phish-word:hover { background: rgba(255, 184, 0, 0.15); }
+
+.phish-word.found {
+  background: rgba(0, 245, 212, 0.18);
+  border-bottom: 2px solid var(--teal);
+}
+
+.phish-word.wrong-pick {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+.phish-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.phish-found-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.phish-found-item {
+  display: none;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  background: rgba(0,245,212,0.04);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.phish-found-item.show { display: flex; }
+
+.phish-found-item .icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #03261f;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* ===== Password Lab ===== */
+.pw-input-wrap {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+#pwInput {
+  width: 100%;
+  padding: 18px 50px 18px 20px;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  background: var(--bg-base);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.25s;
+}
+
+#pwInput:focus { border-color: var(--glass-border-bright); }
+
+.pw-toggle {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.pw-meter {
+  height: 8px;
+  border-radius: 100px;
+  background: var(--glass-bg);
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid var(--glass-border);
+}
+
+.pw-meter-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 100px;
+  background: var(--danger);
+  transition: width 0.4s var(--ease), background 0.4s;
+}
+
+.pw-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.pw-checks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.pw-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  transition: color 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.pw-check.pass {
+  color: var(--text-primary);
+  border-color: var(--teal-dim);
+  background: rgba(0,245,212,0.05);
+}
+
+.pw-check .icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-muted);
+  display: grid;
+  place-items: center;
+  font-size: 0.65rem;
+  transition: all 0.3s;
+}
+
+.pw-check.pass .icon {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: #03261f;
+}
+
+@media (max-width: 640px) {
+  .pw-checks { grid-template-columns: 1fr; }
+}
+
+/* ===== Link Checker ===== */
+.link-game-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.link-url {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.link-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.link-btn {
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.link-btn:hover:not(:disabled) { border-color: var(--glass-border-bright); color: var(--text-primary); }
+.link-btn:disabled { opacity: 0.4; cursor: default; }
+
+.link-btn.correct-pick { background: var(--teal); color: var(--bg-base); border-color: var(--teal); }
+.link-btn.wrong-pick { background: var(--danger); color: #fff; border-color: var(--danger); }
+
+.link-explain {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 10px;
+  display: none;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.link-explain.show { display: block; }
+
+.game-score-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.game-score-bar .score-val { color: var(--teal); font-weight: 700; }

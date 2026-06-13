@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Games — SafeNet</title>
+<meta name="description" content="Play Spot the Phish, Password Strength Lab and Link Checker — interactive mini-games that build real cyber security instincts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+<div class="ambient-bg"></div>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="shield">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L4 5V11C4 16 7.5 19.5 12 22C16.5 19.5 20 16 20 11V5L12 2Z" stroke="#00f5d4" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M9 12L11 14L15.5 9.5" stroke="#00f5d4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      SafeNet
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Threat Library</a>
+      <a href="quiz.html">Quiz Zone</a>
+      <a href="games.html" class="active">Mini Games</a>
+      <a href="report.html">Report &amp; Helpline</a>
+      <a href="about.html">About Us</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="report.html" class="btn btn-danger" style="padding:10px 20px; font-size:0.85rem;">Report a Crime</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow">Mini Games</span>
+    <h1>Practice makes <span class="gradient-text">paranoid (in a good way)</span></h1>
+    <p>Three short games that train the same instincts real scams try to bypass — spotting red flags, building strong passwords, and checking links before you click.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="game-tabs reveal">
+      <button class="game-tab active" data-target="panelPhish">🎯 Spot the Phish</button>
+      <button class="game-tab" data-target="panelPassword">🔐 Password Lab</button>
+      <button class="game-tab" data-target="panelLinks">🔗 Link Checker</button>
+    </div>
+
+    <!-- ================= GAME 1: SPOT THE PHISH ================= -->
+    <div class="game-panel active" id="panelPhish">
+      <div class="glass card reveal" style="max-width:780px; margin:0 auto;">
+        <div class="phish-status">
+          <h3>Click every suspicious word or phrase</h3>
+          <div class="tag tag-teal">Found: <span id="phishScore">0 / 7</span></div>
+        </div>
+        <p style="margin-bottom:20px;">This message claims to be from a bank. Click on every word, phrase, or link that you think is a red flag. Some highlighted text is just normal — only click what feels suspicious.</p>
+
+        <div class="phish-message glass" id="phishMessage">
+          <span class="phish-word" data-flag="URGENT">URGENT</span>: Dear valued customer, this is to inform you that your account has been flagged for review and will be <span class="phish-word" data-flag="BLOCKED">BLOCKED</span> within <span class="phish-word" data-flag="24">24</span> hours unless you <span class="phish-word" data-flag="verify-now">verify-now</span> by visiting <span class="phish-word" data-flag="http://secure-update-bank.in">http://secure-update-bank.in</span>. You will be asked to confirm your <span class="phish-word" data-flag="OTP">OTP</span> and registered mobile number. Please act <span class="phish-word" data-flag="immediately">immediately</span> to avoid suspension of all banking services. Thank you for banking with us.
+        </div>
+
+        <div class="phish-found-list">
+          <div class="phish-found-item" data-flag="URGENT"><span class="icon">✓</span>"URGENT" in caps — designed to trigger panic and rushed decisions.</div>
+          <div class="phish-found-item" data-flag="BLOCKED"><span class="icon">✓</span>"BLOCKED" — fear-based language pressuring immediate action.</div>
+          <div class="phish-found-item" data-flag="24"><span class="icon">✓</span>"within 24 hours" — artificial deadline to prevent careful thinking.</div>
+          <div class="phish-found-item" data-flag="verify-now"><span class="icon">✓</span>"verify-now" — vague call to action pushing you toward a link.</div>
+          <div class="phish-found-item" data-flag="http://secure-update-bank.in"><span class="icon">✓</span>The link uses HTTP and a generic domain — not your real bank's official site.</div>
+          <div class="phish-found-item" data-flag="OTP"><span class="icon">✓</span>Asking to "confirm OTP" — no bank ever needs your OTP to "verify" anything.</div>
+          <div class="phish-found-item" data-flag="immediately"><span class="icon">✓</span>"act immediately" — another urgency trigger to bypass careful thinking.</div>
+        </div>
+
+        <div style="margin-top:24px; display:flex; justify-content:flex-end;">
+          <button class="btn btn-ghost" id="phishRestart">Reset Game</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= GAME 2: PASSWORD LAB ================= -->
+    <div class="game-panel" id="panelPassword">
+      <div class="glass card reveal" style="max-width:640px; margin:0 auto;">
+        <h3 style="margin-bottom:8px;">Test your password strength</h3>
+        <p style="margin-bottom:24px;">Type a password below (it's never sent anywhere — everything happens right here in your browser) and see how it holds up against common cracking checks.</p>
+
+        <div class="pw-input-wrap">
+          <input type="password" id="pwInput" placeholder="Type a password to test..." autocomplete="off">
+          <button class="pw-toggle" id="pwToggle" aria-label="Show password">👁️</button>
+        </div>
+
+        <div class="pw-meter"><div class="pw-meter-fill" id="pwMeterFill"></div></div>
+        <div class="pw-label" id="pwLabel">Enter a password to test</div>
+
+        <div class="pw-checks">
+          <div class="pw-check" id="checkLength"><span class="icon">✓</span>At least 12 characters</div>
+          <div class="pw-check" id="checkUpper"><span class="icon">✓</span>Contains uppercase letter</div>
+          <div class="pw-check" id="checkLower"><span class="icon">✓</span>Contains lowercase letter</div>
+          <div class="pw-check" id="checkNumber"><span class="icon">✓</span>Contains a number</div>
+          <div class="pw-check" id="checkSpecial"><span class="icon">✓</span>Contains special character</div>
+          <div class="pw-check" id="checkCommon"><span class="icon">✓</span>Not a common pattern</div>
+        </div>
+
+        <div class="glass card" style="margin-top:24px; border-color:var(--teal-dim);">
+          <h4 style="margin-bottom:8px; font-size:0.95rem;">💡 Pro tip: Use a passphrase</h4>
+          <p style="font-size:0.88rem;">Four random words like <span class="mono" style="color:var(--teal);">tiger-cloud-amber-bench92</span> are easier to remember and harder to crack than a short complex password.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= GAME 3: LINK CHECKER ================= -->
+    <div class="game-panel" id="panelLinks">
+      <div class="glass card reveal" style="max-width:780px; margin:0 auto;">
+        <div class="phish-status">
+          <h3>Safe or Suspicious?</h3>
+          <div class="tag tag-teal">Score: <span id="linkScore">0 / 6</span></div>
+        </div>
+        <p style="margin-bottom:20px;">For each link below, decide whether it's a genuine website or a scam lookalike. Look closely at the domain name and spelling.</p>
+
+        <div id="linkGameList"></div>
+
+        <div style="margin-top:16px; display:flex; justify-content:flex-end;">
+          <button class="btn btn-ghost" id="linkRestart">Reset Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="glass reveal" style="padding:50px; text-align:center; background:linear-gradient(135deg, rgba(0,245,212,0.06), rgba(123,97,255,0.06));">
+      <span class="eyebrow">Stay prepared</span>
+      <h2 style="margin:14px 0;">Know what to do if something goes wrong</h2>
+      <p style="max-width:520px; margin:0 auto 28px;">Even with the best instincts, mistakes happen. Know the exact steps and helpline to act fast.</p>
+      <a href="report.html" class="btn btn-danger">Report &amp; Helpline Guide</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-brand" style="margin-bottom:14px; display:inline-flex;">
+          <span class="shield">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L4 5V11C4 16 7.5 19.5 12 22C16.5 19.5 20 16 20 11V5L12 2Z" stroke="#00f5d4" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M9 12L11 14L15.5 9.5" stroke="#00f5d4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          SafeNet
+        </a>
+        <p style="max-width:340px; margin-top:6px;">A Student Social Responsibility initiative by Team 36, B.Tech Cyber Security (2024–2028), Amrita Vishwa Vidyapeetham, Amritapuri Campus.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="learn.html">Threat Library</a></li>
+          <li><a href="quiz.html">Quiz Zone</a></li>
+          <li><a href="games.html">Mini Games</a></li>
+          <li><a href="report.html">Report &amp; Helpline</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="about.html">Our Team</a></li>
+          <li><a href="about.html#mentor">Mentor</a></li>
+          <li><a href="about.html#project">Project SafeNet</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Emergency</h4>
+        <ul>
+          <li><a href="report.html">Helpline: 1930</a></li>
+          <li><a href="https://cybercrime.gov.in" target="_blank" rel="noopener">cybercrime.gov.in</a></li>
+          <li><a href="report.html#steps">How to Report</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SafeNet — Team 36, Amrita Vishwa Vidyapeetham. Built for community awareness.</span>
+      <span class="mono">v1.0 · safenet-ssr-project</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/games.js"></script>
+</body>
+</html>

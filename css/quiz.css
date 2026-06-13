@@ -1,0 +1,193 @@
+/* ===================================================================
+   SafeNet — Quiz Zone styles
+   =================================================================== */
+
+.quiz-shell {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.quiz-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.quiz-progress-seg {
+  flex: 1;
+  height: 5px;
+  border-radius: 100px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+}
+
+.quiz-progress-seg.done { background: var(--teal); border-color: var(--teal); }
+.quiz-progress-seg.current { background: var(--violet); border-color: var(--violet); }
+
+.quiz-card {
+  padding: 40px;
+}
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.quiz-counter {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.quiz-question {
+  font-size: 1.3rem;
+  margin-bottom: 28px;
+  line-height: 1.4;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  color: var(--text-primary);
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  width: 100%;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--glass-border-bright);
+  transform: translateX(4px);
+}
+
+.quiz-option .opt-letter {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.quiz-option.correct {
+  border-color: var(--teal);
+  background: rgba(0, 245, 212, 0.08);
+}
+.quiz-option.correct .opt-letter { background: var(--teal); color: #03261f; }
+
+.quiz-option.incorrect {
+  border-color: var(--danger);
+  background: rgba(255, 77, 94, 0.08);
+}
+.quiz-option.incorrect .opt-letter { background: var(--danger); color: #fff; }
+
+.quiz-option:disabled { cursor: default; }
+.quiz-option:disabled:not(.correct):not(.incorrect) { opacity: 0.5; }
+
+.quiz-feedback {
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+  display: none;
+}
+
+.quiz-feedback.show { display: block; }
+
+.quiz-feedback strong { color: var(--text-primary); }
+
+.quiz-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Results screen */
+.quiz-results {
+  text-align: center;
+  padding: 50px 40px;
+  display: none;
+}
+
+.quiz-results.show { display: block; }
+.quiz-shell.results-mode .quiz-card { display: none; }
+
+.quiz-score-ring {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 28px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.quiz-score-ring svg { transform: rotate(-90deg); }
+
+.quiz-score-ring .score-text {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.quiz-result-tag {
+  margin: 0 auto 16px;
+}
+
+.quiz-review {
+  margin-top: 36px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quiz-review-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.quiz-review-item .icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.quiz-review-item.correct .icon { background: var(--teal); color: #03261f; }
+.quiz-review-item.incorrect .icon { background: var(--danger); color: #fff; }

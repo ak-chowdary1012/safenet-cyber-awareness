@@ -1,0 +1,157 @@
+/* ===================================================================
+   SafeNet — Signature "Threat Radar" hero visual
+   =================================================================== */
+
+.hero {
+  padding: 170px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+  .hero { padding: 140px 0 60px; }
+}
+
+.hero h1 { margin: 18px 0 22px; }
+
+.hero h1 .line { display: block; }
+
+.hero-lede {
+  font-size: 1.08rem;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.hero-meta .stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hero-meta .stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ===================== Radar visual ===================== */
+.radar-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 480px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+.radar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+}
+
+.radar-ring.r1 { width: 100%; height: 100%; }
+.radar-ring.r2 { width: 76%; height: 76%; }
+.radar-ring.r3 { width: 50%; height: 50%; }
+.radar-ring.r4 { width: 26%; height: 26%; border-color: var(--glass-border-bright); }
+
+.radar-sweep {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(0,245,212,0.35), transparent 28%);
+  animation: spin 5s linear infinite;
+  mask: radial-gradient(circle, transparent 25%, black 26%);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.radar-core {
+  position: relative;
+  width: 26%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border-bright);
+  backdrop-filter: blur(16px);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 60px -10px rgba(0, 245, 212, 0.4);
+  z-index: 3;
+}
+
+.radar-core svg { width: 46%; height: 46%; }
+
+/* Floating glass islands — threat blips */
+.radar-blip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  z-index: 4;
+  animation: float 6s ease-in-out infinite;
+}
+
+.radar-blip .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.radar-blip.blip-1 { top: 6%; left: 2%; animation-delay: 0s; }
+.radar-blip.blip-2 { top: 18%; right: -4%; animation-delay: 1.2s; }
+.radar-blip.blip-3 { bottom: 10%; left: -6%; animation-delay: 2.4s; }
+.radar-blip.blip-4 { bottom: 22%; right: 0%; animation-delay: 3.6s; }
+.radar-blip.blip-5 { top: 50%; left: -10%; animation-delay: 0.8s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.radar-blip.blip-1 .dot, .radar-blip.blip-4 .dot { background: var(--danger); box-shadow: 0 0 10px var(--danger); }
+.radar-blip.blip-2 .dot { background: var(--amber); box-shadow: 0 0 10px var(--amber); }
+.radar-blip.blip-3 .dot, .radar-blip.blip-5 .dot { background: var(--teal); box-shadow: 0 0 10px var(--teal); }
+
+@media (max-width: 980px) {
+  .radar-wrap { max-width: 360px; }
+  .radar-blip { font-size: 0.66rem; padding: 7px 12px; }
+  .radar-blip.blip-2, .radar-blip.blip-5 { display: none; }
+}
+
+@media (max-width: 560px) {
+  .radar-wrap { max-width: 290px; }
+}
